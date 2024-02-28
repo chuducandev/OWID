@@ -1,0 +1,5 @@
+The chart represents the global incidence of child labor among two different age groups over a period from 2000 to 2012. It specifically shows the percentage of children, by age bracket, who were involved in economic activities for at least one hour in the reference week of the corresponding survey. 
+
+For the older group (15-17 years), the incidence of child labor has shown a decreasing trend from 42.4% in the year 2000 to 33.0% in 2012. Similarly, for the younger age group (5-14 years), there is also a steady decline from 17.6% in 2000 to 11.8% in 2012. Both trends indicate a positive movement towards reducing child labor globally.
+
+The data highlights that child labor was significantly more prevalent among the 15-17 age group compared to those aged 5-14 years throughout the entire period observed. While there is an observable decrease in child labor rates for both categories, the proportion of children aged 15-17 engaged in such activities has always been more than twice that of the 5-14 age group. Overall, the chart reflects a gradual reduction in the incidence of child labor amongst children globally over the 12-year span.

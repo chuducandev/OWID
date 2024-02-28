@@ -1,0 +1,5 @@
+The chart illustrates the percentage of mothers who received at least four antenatal care visits during pregnancy in Eritrea, San Marino, South Africa, and Sudan from 1995 to 2016. Antenatal care visits are an indicator of access to healthcare services provided by skilled health personnel during pregnancy.
+
+In Eritrea, there was a steady increase in the share of mothers receiving this care, from 26.6% in 1995 to 57.4% in 2010. San Marino, with very limited data, shows a near-universal coverage of 99.5% in 2009. South Africa’s trend is more erratic, displaying an initial decrease from 73.1% in 1998 to 56.1% in 2003, followed by a climb to 87.1% in 2008 before dropping to 75.5% in 2016. Sudan's data for two points in time indicates a slight improvement, from 47.1% in 2010 to 50.7% in 2014.
+
+The variation in trends between these countries shows different levels of success in the implementation of maternal health care policies. While San Marino demonstrates exceptional performance, Eritrea and Sudan indicate moderate
