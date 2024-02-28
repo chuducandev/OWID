@@ -47,9 +47,7 @@ def wait_and_click(driver, selector, delay=0.5, timeout=10):
     print("Clicked", selector)
 
 
-def download_charts(
-    driver, file_name, csv_output_folder="plain_csv", png_output_folder="plain_png"
-):
+def wait_and_click_show_chart_button(driver):
     try:
         show_chart_button = get_element(
             driver, 'button[data-track-note="chart_click_chart"]'
@@ -67,6 +65,11 @@ def download_charts(
         print("No chart found")
         raise e
 
+
+def download_chart_files(
+    driver, file_name, csv_output_folder="plain_csv", png_output_folder="plain_png"
+):
+    wait_and_click_show_chart_button(driver)
     wait_and_click(driver, 'button[data-track-note="chart_click_download"]', delay=1.5)
 
     original_url = driver.current_url
@@ -124,7 +127,41 @@ def get_entities(driver):
             raise Exception("No entities found")
 
 
-def download_charts_and_get_entities(driver, url, file_name):
+def extract_meta(driver, file_name, output_folder="meta"):
+    title_element = get_element(driver, 'div[class="HeaderHTML"]')
+
+    # Find and extract the title
+    title_parts = title_element.find_elements(By.XPATH, "//h1//*")
+    title = " ".join([part.text for part in title_parts])
+
+    def format_string(s):
+        return s.replace("\n", " ").strip()
+
+    # Find and extract the subtitle (if present)
+    subtitle_parts = title_element.find_elements(By.XPATH, ".//p//*")
+    subtitle_part_texts = [format_string(part.text) for part in subtitle_parts]
+
+    for part in subtitle_parts:
+        print(f'"{part.text}"')
+
+    subtitle = ""
+
+    for part in subtitle_part_texts:
+        if part not in subtitle:
+            subtitle = format(subtitle + " " + part if subtitle else part)
+
+    print("Title:", title)
+    print("Subtitle:", subtitle)
+
+    os.makedirs(output_folder, exist_ok=True)
+    with open(os.path.join(output_folder, file_name + ".json"), "w") as f:
+        f.write(
+            f'{{"title": "{title}", "subtitle": "{subtitle}", "file_name": "{file_name}"}}'
+        )
+
+
+def download_charts(driver, url, file_name):
     driver.get(url)
-    download_charts(driver, file_name)
+    download_chart_files(driver, file_name)
+    extract_meta(driver)
     return get_entities(driver)

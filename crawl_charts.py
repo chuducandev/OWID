@@ -1,5 +1,5 @@
 from crawl_chart_pages import crawl_chart_pages
-from download_charts import download_charts_and_get_entities
+from download_charts import download_charts
 from process_charts import process_csv, process_png
 
 
@@ -12,7 +12,7 @@ def crawl_chart(driver, url, index, retries=3):
         csv_file_name = file_name + ".csv"
         png_file_name = file_name + ".png"
 
-        entities = download_charts_and_get_entities(driver, url, file_name)
+        entities = download_charts(driver, url, file_name)
         process_csv(csv_file_name, entities)
         process_png(png_file_name)
     except Exception as e:
